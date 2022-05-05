@@ -1,0 +1,32 @@
+{% load static %}
+<nav style="margin-left:5px;">
+    <ul  style="list-style-type:none;" class="aman">
+        <div>
+        <img src="{% static 'enroll/img/feme.jpg' %}"class="text-white rounded-circle mt-3 mb-3" style="width:100px; height:100px;" alt="feme" srcset="">
+        <h6 class="mt-0" style="margin-left:30px;">Femepilot</h6>
+        </div>
+        <hr>
+        {% if not request.user.is_authenticated %}
+        <ul>
+            <li style="list-style-type:none;" class="mmy-2">
+                <a href="{% url 'dash' %}" class=" link text-white" style="text-decoration:none">Home</a>
+            </li>
+            <li style="list-style-type:none;" class="my-2">
+                <a href="{% url 'register'%}"  class="link text-white" style="text-decoration:none">REGISTER_HERE</a>
+            </li>
+            <li style="list-style-type:none;" class="my-2">
+                <a href="{% url 'login'%}"  class="link text-white" style="text-decoration:none">login</a>
+            </li>
+        </ul>
+        {% else %}
+        <ul>
+            <li class="mt-5">
+                <a href="{% url 'prof'%}"  class="link text-white" style="text-decoration:none">Profile</a>
+            </li>
+            <li class="mt-5">
+                <a href="{% url 'out'%}"  class="link text-white" style="text-decoration:none">log_out</a>
+            </li>
+        </ul>
+        {% endif %}
+    </ul>
+</nav>

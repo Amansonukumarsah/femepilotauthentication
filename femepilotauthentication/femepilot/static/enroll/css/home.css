@@ -1,0 +1,7 @@
+.aman li:hover{
+  color: aqua;
+}
+
+.aman li:active{
+  color: bisque;
+}

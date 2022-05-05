@@ -1,0 +1,42 @@
+{% extends 'enroll/basice.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div style="display:flex;" class="text-center mt-3">
+                <h1 style="margin-left:30px;">Welcome to Femepilot</h1>
+                <img src="{% static 'enroll/img/feme.jpg' %}"  style="width:100px; height:100px; margin-left:50%;"alt="feme">
+            </div class="text-center">
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top:20px;">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 card">
+            <div class="card-header">
+                <h4 class="text-center">Login Here</h4>
+            </div>
+             <div class="card-body">
+                <form action="" method="post" class="my-5">
+                    {% csrf_token %}
+                    {% for form in fm %}
+                    {{form.label}}
+                    {{form}}
+                    <br><br>
+                    {% endfor %}
+                    <br><br>
+                    <input type="submit" class="bg-primary">
+                </form>
+             </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{% endblock content %}
